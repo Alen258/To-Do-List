@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TODO</title>
+</head>
+<body>
+
+	<input type="text" id="new_list_item">
+	<button onclick="addItem()">Add item</button>	
+
+	<script type="text/javascript">
+		var listitems=['Play','Eat'];
+	</script>
+
+	<script type="text/javascript">
+		function addItem(){
+			var tempItem=document.getElementById("new_list_item").value;
+			listitems.push(tempItem);
+			displayList(tempItem);
+			document.getElementsById("new_list_item").value=='';
+		}
+	</script>
+
+ <div id="display">
+ 	<h3>Your TODO items:</h3>
+ 	<ul>
+ 		<script type="text/javascript">
+ 			listitems.forEach(displayList);
+
+ 			function displayList(item){
+ 				document.getElementById("display").innerHTML +="<li>"+item+
+ 				"</li>"
+ 			}
+ 		</script>
+ 	</ul>
+ </div>
+
+
+</body>
+</html>
+
+
